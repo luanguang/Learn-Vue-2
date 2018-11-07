@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .is-loading { color: yellow; }
+    </style>
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- //v-bind 等同于 :
+        <button v-bind:title="title">biaoti</button> -->
+        <!-- <h1 :class="className">Hello world</h1> -->
+        <button :class="{ 'is-loading' : isLoading }" @click="toggleClass">toggleClass</button>
+    </div>
+
+
+
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                title: '这是JS的标题',
+                className: 'color-red',
+                isLoading: false,
+            },
+
+            methods: {
+                toggleClass() {
+                    this.isLoading = true;
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
